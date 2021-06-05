@@ -1,0 +1,9 @@
+## build
+
+'''
+$ docker build -t greet .
+'''
+
+## exec 
+
+ docker container run -it  d0e5aba1d7cd test

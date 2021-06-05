@@ -1,0 +1,14 @@
+## build
+
+```
+docker build -t volum-sample .
+```
+
+## run
+
+```
+docker container run -it -v test_mount:/myvol volum-sample /bin/bash
+```
+
+# NOTE: ~/Library/Containers/com.docker.docker/Data/vms/0`
+

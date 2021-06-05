@@ -1,0 +1,11 @@
+## build
+
+```
+docker build -t expose-sample .
+```
+
+## run 
+
+```
+$ docker container run -p 80:80 -d expose-sample
+```

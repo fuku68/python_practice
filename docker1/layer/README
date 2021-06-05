@@ -1,0 +1,11 @@
+## build
+
+```
+docker build -t layer-sample .
+```
+
+## run
+
+```
+docker container run -it layer-sample /bin/bash
+```

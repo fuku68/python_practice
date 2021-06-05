@@ -1,0 +1,11 @@
+## build
+
+```
+docker build -t add-remote-sample .
+```
+
+## run
+
+```
+docker container run -it  add-remote-sample /bin/bash
+```

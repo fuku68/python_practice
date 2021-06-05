@@ -1,0 +1,11 @@
+## build
+
+```
+docker build -t env-sample .
+```
+
+## run
+
+```
+docker container run -it env-sample /bin/bash
+```

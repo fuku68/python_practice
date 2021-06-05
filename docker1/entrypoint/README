@@ -1,0 +1,13 @@
+## build
+
+```
+docker build -t cmd-sample .
+```
+
+## run
+
+```
+docker container run -it sample
+
+docker container run -it sample -d 2
+```

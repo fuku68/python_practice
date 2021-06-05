@@ -1,0 +1,13 @@
+## build
+
+```
+docker build -t arg-sample .
+```
+
+## run
+
+```
+docker container run arg-sample
+
+docker build . --build-arg YOURNAME=shiho
+```

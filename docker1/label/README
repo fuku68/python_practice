@@ -1,0 +1,11 @@
+## build
+
+```
+docker build -t label-sample .
+```
+
+## run 
+
+```
+docker image inspect --format="{{ .Config.Labels }}" label-sample
+```

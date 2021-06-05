@@ -1,0 +1,11 @@
+## build
+
+```
+docker build -t webap .
+```
+
+## inspect
+
+```
+docker container inspect webap
+```
