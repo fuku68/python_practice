@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  test:
+    build: .
+    tty: true
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+

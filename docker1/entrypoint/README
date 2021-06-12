@@ -1,13 +1,13 @@
 ## build
 
 ```
-docker build -t cmd-sample .
+docker build -t entrypoint-sample .
 ```
 
 ## run
 
 ```
-docker container run -it sample
+docker container run -it entrypoint-sample
 
-docker container run -it sample -d 2
+docker container run -it entrypoint-sample -d 2
 ```
