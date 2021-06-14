@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  client:
+    build: .
+    tty: true
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 3306:3306
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./data:/var/lib/mysql

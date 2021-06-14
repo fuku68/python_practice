@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  # WebServer config
+  webserver:
+    build: .
+    tty: true
+    environment:
+      HOGE: fuga
+      FOO:
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:4.0

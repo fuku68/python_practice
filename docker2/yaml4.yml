@@ -1,0 +1,11 @@
+- name: tomato
+  email: tomato@gmail.com
+- name: potato
+  email: potato@gmail.com
+
+# names:
+#   - tomato1
+#   - tomato2
+# emails:
+#   - potato1@gmail.com
+#   - potato2@gmail.com
