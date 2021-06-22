@@ -6,12 +6,8 @@ CREATE TABLE tb2
 	tosi INT
 );
 INSERT INTO tb2
-VALUES("A106", "中村", 26);
-INSERT INTO tb2
-VALUES("A107", "田中", 24);
-INSERT INTO tb2
-VALUES("A108", "鈴木", 23);
-INSERT INTO tb2
-VALUES("A109", "村井", 25);
-INSERT INTO tb2
-VALUES("A110", "吉田", 27);
+VALUES("A106", "中村", 26),
+	("A107", "田中", 24),
+	("A108", "鈴木", 23),
+	("A109", "村井", 25),
+	("A110", "吉田", 27);
