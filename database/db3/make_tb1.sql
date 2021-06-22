@@ -35,4 +35,3 @@ VALUES
 INSERT INTO tb
 VALUES
 	('A107', 87, 6);
-	
