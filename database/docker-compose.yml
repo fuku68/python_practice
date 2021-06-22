@@ -16,3 +16,9 @@ services:
     volumes:
       - ./my.cnf:/etc/mysql/conf.d/my.cnf
       - ./data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
