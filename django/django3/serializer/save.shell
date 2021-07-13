@@ -1,0 +1,39 @@
+from tutorial.serializers import CommentSerializer
+
+data = { 'email': 'leila@example.com', 'content': 'foo bar', 'created': '2021-07-01T13:13' }
+
+# create
+serializer = CommentSerializer(data=data)
+serializer.is_valid()
+comment = serializer.save()
+
+# update
+serializer = CommentSerializer(comment, data=data)
+serializer.is_valid()
+comment = serializer.save()
+
+
+from rest_framework.parsers import JSONParser
+from io import BytesIO
+from api.serializers import BookSerializer
+
+data = JSONParser().parse(BytesIO('{"title":"DRFの本","price":1500}'.encode()))
+serializer = BookSerializer(data=data)
+serializer.is_valid()
+# True
+
+serializer.validated_data
+# OrderedDict([('title', 'DRFの本'), ('price', 1500)])
+serializer.save()
+# <Book: DRFの本>
+serializer.instance
+# <Book: DRFの本>  モデルオブジェクトの更新時
+
+
+# 更新
+book = Book.objects.first()
+serializer = BookSerializer(instance=book, data={'title': 'DRFの教科書'})
+serializer.is_valid()
+# True
+serializer.save()
+# <Book: DRFの教科書>

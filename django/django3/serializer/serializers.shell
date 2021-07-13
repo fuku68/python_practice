@@ -1,0 +1,22 @@
+from tutorial import comment
+from tutorial.serializers import CommentSerializer
+
+# シリアライズ
+serializer = CommentSerializer(comment. comment)
+serializer.data
+
+# json変換
+from rest_framework.renderers import JSONRenderer
+json = JSONRenderer().render(serializer.data)
+Json
+
+import io
+from rest_framework.parsers import JSONParser
+
+stream = io.BytesIO(json) 
+data = JSONParser().parse(stream)
+
+# デシリアライズ
+serializer = CommentSerializer(data=data) serializer.is_valid()
+
+serializer.validated_data
