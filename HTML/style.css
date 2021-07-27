@@ -1,0 +1,71 @@
+#wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  background-image: url("./sample.jpeg");
+}
+
+ul > li {
+  color: red;
+  list-style: none;
+}
+
+.blue {
+  color: blue;
+}
+
+div.wagahai > p {
+  border-bottom: 1px solid black;
+}
+
+div.chosha > p {
+  border: 2px dotted skyblue;
+}
+
+.paragraph {
+  color: skyblue;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sample-width {
+  border: 2px solid skyblue;
+  margin-bottom: 3rem;
+}
+
+.sample-width > p {
+  background-color: mediumturquoise;
+  color: white;
+  margin: 2rem 0rem;
+  padding: 2rem 0;
+  width: 50%;
+}
+
+.wrap {
+  border: 2px solid skyblue;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.flex-description {
+  color: skyblue;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+.item {
+  background-color: mediumaquamarine;
+  border: 1px solid skyblue;
+  color: white;
+}
+
+.container-grid {
+  width: 500px;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  gap: 10px;
+  grid-template-rows: 200px 200px;
+}
