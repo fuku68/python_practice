@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input-date-with-today></input-date-with-today>
+    </div>
+    <script>
+      Vue.component("input-date-with-today", {
+        render: function (createElement) {
+          return createElement("input", {
+            attrs: {
+              type: "date",
+              value: new Date().toISOString().substring(0, 10),
+            },
+          });
+        },
+      });
+      Vue.component("コンポーネント名", {
+        props: {
+          親から受け取る属性名: {
+            type: "StringやObjectなどのデータ型",
+            default: "デフォルト値",
+            required: "必須かどうかの真偽値",
+            validator: "バリデーション用の関数",
+          },
+        },
+        // ...template内で「親から受け取る属性」が使える
+      });
+      new Vue({ el: "#app" });
+    </script>
+  </body>
+</html>

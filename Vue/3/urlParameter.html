@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <router-link :to="{ name: 'user', params:{ userId: 123 }}">ユーザ詳細ページ</router-link>
+    <!-- script -->
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <script>
+      // Vueのコード
+      var router = new VueRouter({
+        routes: [
+          {
+            path: "/user/:userId",
+            component: {
+              template: "<div>ユーザIDは{{ $route.params.userId }}</div>",
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
