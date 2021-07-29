@@ -24,6 +24,7 @@ function log(target: any, key: string, desc: PropertyDescriptor) {
 
 class MyClass {
   @log
+  // @ts-ignore
   add(x: number, y: number): number {
     let s = Date.now();
     while (Date.now() - s < 4500);
