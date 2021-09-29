@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.global-navigation {
+	display: flex;
+	list-style: none;
+	background-color: darkcyan;
+	color: white;
+	height: 4rem;
+	line-height: 4rem;
+	padding-left: 2rem;
+}
+
+.global-navigation>li {
+	padding-right: 1rem;
+}
+
+.main {
+	min-height: 80vh;
+	line-height: 80vh;
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+	list-style: none;
+	color: darkcyan
+}

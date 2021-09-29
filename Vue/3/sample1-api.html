@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <!-- router-linkによるナビゲーション定義 -->
+        <router-link to="/top">トップページ</router-link>
+        <router-link to="/users">ユーザー一覧ページ</router-link>
+      </nav>
+      <router-view></router-view>
+    </div>
+    <!-- script -->
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+
+    <!-- ここから以後を書いていく -->
+    <script type="text/x-template" id="user-list">
+      <div>
+        <div class="loading" v-if="loading">読み込み中...</div>
+        <div v-if="error" class="error">{{ error }}</div>
+        <!-- usersがロードされたら各ユーザの名前を表示する -->
+        <div v-for="user in users" :key="user.id">
+          <h2>{{ user.name }}</h2>
+        </div>
+      </div>
+    </script>
+
+    <script>
+      // JSONを返す関数、この関数を用いて
+      // 擬似的にWebAPI経由で情報を取得したようにする
+      var getUsers = function (callback) {
+        setTimeout(function () {
+          callback(null, [
+            { id: 1, name: "Takuya Tejima" },
+            { id: 2, name: "Yohei Noda" },
+          ]);
+        }, 1000);
+      };
+
+      // UserListを改修
+      var UserList = {
+        // HTML上のscriptタグのidを指定する
+        template: "#user-list",
+        data: function () {
+          return {
+            loading: false,
+            users: function () {
+              return [];
+            }, // 初期値の空配列
+            error: null,
+          };
+        },
+        created: function () {
+          this.fetchData();
+        },
+        // $routeの変更をwatchすることでルーティングが変更された時に
+        // 再度データを取得
+        watch: {
+          $route: "fetchData",
+        },
+        methods: {
+          fetchData: function () {
+            this.loading = true;
+            // 取得したデータの結果をusersに格納する
+            getUsers(
+              function (err, users) {
+                this.loading = false;
+                if (err) {
+                  this.error = err.toString();
+                } else {
+                  this.users = users;
+                }
+              }.bind(this)
+            );
+          },
+        },
+      };
+
+      var router = new VueRouter({
+        routes: [
+          {
+            path: "/top",
+            component: {
+              template: "<div>トップページです。</div>",
+            },
+          },
+          {
+            path: "/users",
+            component: UserList,
+          },
+        ],
+      });
+
+      var app = new Vue({
+        router: router,
+      }).$mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,3 +1,6 @@
 __pycache__
 database/data
 mysite
+
+.DS_store
+.vscode/

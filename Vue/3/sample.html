@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <!-- router-linkによるナビゲーション定義 -->
+        <router-link to="/top">トップページ</router-link>
+        <router-link to="/users">ユーザー一覧ページ</router-link>
+      </nav>
+      <router-view></router-view>
+    </div>
+    <!-- script -->
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <!-- ここから以後を書いていく -->
+    <script type="text/x-template" id="user-list">
+      <!-- コンポーネントで使用するテンプレートHTMLを記載。コンポーネントごとに繰り返すscriptタグて定義 -->
+    </script>
+    <script>
+      // 必要な分のコンポーネント、ルート定義からVueインスタンスの生成など
+    </script>
+  </body>
+</html>

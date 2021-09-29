@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- script -->
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <script>
+      // Vueのコード
+      var UserList = {
+        template: "#user-list",
+        data: function () {
+          return {
+            users: function () {
+              return;
+            },
+            error: null,
+          };
+        },
+        // 「ページ遷移が行われて、コンポーネントが
+        // 初期化される前」に呼び出される
+        beforeRouteEnter: function (to, from, next) {
+          getUsers(function (err, users) {
+            if (err) {
+              this.error = err.toString();
+            } else {
+              // nextに渡すcallbackでコンポーネント自身にアクセス可
+              next(function (vm) {
+                vm.users = users;
+              });
+            }
+          }).bind(this);
+        },
+      };
+    </script>
+  </body>
+</html>
